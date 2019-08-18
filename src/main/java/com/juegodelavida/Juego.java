@@ -3,19 +3,12 @@ package com.juegodelavida;
 public class Juego {
     public static boolean[][] generarTablero(boolean[][] tablero)
     {
-        boolean[][] tableroEsperado =
-                {
-                        {false,false,false,false,false}
-                        ,{false,false,false,false,false}
-                        ,{false,false,false,false,false}
-                        ,{false,false,false,false,false}
-                        ,{false,false,false,false,false}
-                        ,{false,false,false,false,false}
-                        ,{false,false,false,false,false}
-                        ,{false,false,false,false,false}
-                        ,{false,false,false,false,false}
-                        ,{false,false,false,false,false}
-                };
+        boolean[][] tableroEsperado = new boolean[tablero.length][tablero.length>0?tablero[0].length:0];
+        for (int f=0; f<tablero.length;f++){
+            for (int c = 0; c < tablero[f].length; c++) {
+                tableroEsperado[f][c] = obtenerEstadoSiguiente(tablero,f,c);
+            }
+        }
         return tableroEsperado;
     }
 
