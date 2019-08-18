@@ -18,4 +18,9 @@ public class Juego {
                 };
         return tableroEsperado;
     }
+
+    public static boolean obtenerEstadoSiguiente(boolean[][] tablero, int i, int i1)
+    {
+        return false;
+    }
 }
