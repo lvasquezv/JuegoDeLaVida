@@ -21,12 +21,15 @@ public class Juego {
 
     public static boolean obtenerEstadoSiguiente(boolean[][] tablero, int f, int c)
     {
-        boolean cv = tablero[f][c];
-        if ((cv &&  (cantidadVecinasVivas(tablero, f, c)<2 || cantidadVecinasVivas(tablero,f,c)> 3)) ||
-                (!cv && (cantidadVecinasVivas(tablero, f, c) !=3)))
+        if (f>=0 && f<tablero.length && c>=0 && (tablero.length>0?c<tablero[0].length:false)){
+            boolean cv = tablero[f][c];
+            if ((cv &&  (cantidadVecinasVivas(tablero, f, c)<2 || cantidadVecinasVivas(tablero,f,c)> 3)) ||
+                    (!cv && (cantidadVecinasVivas(tablero, f, c) !=3)))
+                return false;
+            else
+                return true;
+        }else
             return false;
-        else
-            return true;
     }
     public static int cantidadVecinasVivas(boolean[][] tablero, int f, int c) {
         int cantidad = 0;
