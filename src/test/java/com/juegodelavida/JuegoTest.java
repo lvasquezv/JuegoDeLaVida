@@ -41,4 +41,22 @@ public class JuegoTest{
         boolean valorActual = Juego.obtenerEstadoSiguiente(tablero, 4, 2);
         Assert.assertTrue(valorActual);
     }
+    @Test
+    public void R3_CV_conMasDeTresVecinasVivas_Muere() {
+        boolean[][] tablero =
+                {
+                        {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, true , false, false}
+                        , {false, true , true , true , false}
+                        , {false, false, true , false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                };
+        boolean valorActual = Juego.obtenerEstadoSiguiente(tablero, 4, 2);
+        Assert.assertFalse(valorActual);
+    }
 }
