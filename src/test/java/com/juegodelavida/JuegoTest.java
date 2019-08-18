@@ -77,4 +77,22 @@ public class JuegoTest{
         boolean valorActual = Juego.obtenerEstadoSiguiente(tablero, 3, 1);
         Assert.assertFalse(valorActual);
     }
+    @Test
+    public void T1_enviandoPosicionDeCeldaFueraDeRango() {
+        boolean[][] tablero =
+                {
+                        {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, true , false, false}
+                        , {false, false, true , false, false}
+                        , {false, false, true , false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                };
+        boolean valorActual = Juego.obtenerEstadoSiguiente(tablero, -3, 100);
+        Assert.assertFalse(valorActual);
+    }
 }
