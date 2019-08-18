@@ -21,10 +21,19 @@ public class Juego {
 
     public static boolean obtenerEstadoSiguiente(boolean[][] tablero, int f, int c)
     {
-        if (cantidadVecinasVivas(tablero, f, c)<2 || cantidadVecinasVivas(tablero,f,c)> 3)
-            return false;
-        else
-            return true;
+        boolean cv = tablero[f][c];
+        if (cv){
+            if (cantidadVecinasVivas(tablero, f, c)<2 || cantidadVecinasVivas(tablero,f,c)> 3)
+                return false;
+            else
+                return true;
+        }else{
+            if (cantidadVecinasVivas(tablero, f, c) ==3)
+                return true;
+            else
+                return false;
+        }
+
     }
     public static int cantidadVecinasVivas(boolean[][] tablero, int f, int c){
         int cantidad = 0;
