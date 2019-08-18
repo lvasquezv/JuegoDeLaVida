@@ -6,8 +6,33 @@ import org.junit.Test;
 public class JuegoTest {
     @Test
     public void R1_CV_menosDeDosVecinasVivas_Muere() {
-        boolean[][] tablero = new boolean[5][5];
-        boolean[][] tableroEsperado = new boolean[5][5];
+        boolean[][] tablero =
+        {
+                 {false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,true ,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+        };
+        boolean[][] tableroEsperado =
+        {
+                {false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+                ,{false,false,false,false,false}
+        };
+
         tablero = Juego.generarTablero(tablero);
         Assert.assertArrayEquals(tablero, tableroEsperado);
     }
