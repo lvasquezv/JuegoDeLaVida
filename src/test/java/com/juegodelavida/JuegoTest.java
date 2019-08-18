@@ -59,4 +59,22 @@ public class JuegoTest{
         boolean valorActual = Juego.obtenerEstadoSiguiente(tablero, 4, 2);
         Assert.assertFalse(valorActual);
     }
+    @Test
+    public void R4_CM_conTresVecinasVivas_Vive() {
+        boolean[][] tablero =
+                {
+                        {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, true , false, false}
+                        , {false, false, true , false, false}
+                        , {false, false, true , false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                        , {false, false, false, false, false}
+                };
+        boolean valorActual = Juego.obtenerEstadoSiguiente(tablero, 3, 1);
+        Assert.assertFalse(valorActual);
+    }
 }
