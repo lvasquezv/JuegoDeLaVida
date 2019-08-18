@@ -20,7 +20,7 @@ public class JuegoTest{
                         ,{false,false,false,false,false}
                         ,{false,false,false,false,false}
                 };
-        boolean valor = Juego.obtenerEstadoSiguiente(tablero,2,4);
+        boolean valor = Juego.obtenerEstadoSiguiente(tablero,4,2);
         Assert.assertFalse(valor);
     }
     @Test
@@ -38,7 +38,7 @@ public class JuegoTest{
                         , {false, false, false, false, false}
                         , {false, false, false, false, false}
                 };
-        boolean valorActual = Juego.obtenerEstadoSiguiente(tablero, 2, 4);
+        boolean valorActual = Juego.obtenerEstadoSiguiente(tablero, 4, 2);
         Assert.assertTrue(valorActual);
     }
 }

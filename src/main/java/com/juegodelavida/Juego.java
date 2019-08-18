@@ -21,6 +21,10 @@ public class Juego {
 
     public static boolean obtenerEstadoSiguiente(boolean[][] tablero, int i, int i1)
     {
-        return false;
+        if (!tablero[i-1][i1-1] && !tablero[i-1][i1] && !tablero[i-1][i1+1] && !tablero[i][i1-1]
+                && !tablero[i][i1+1] && !tablero[i+1][i1-1] && !tablero[i+1][i1] && !tablero[i+1][i1+1] )
+            return false;
+        else
+            return true;
     }
 }
